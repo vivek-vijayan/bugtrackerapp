@@ -1,9 +1,11 @@
-import BTAppHeader from './BTAppHeader/BTAppHeader'
+import BaseLogAppHeader from './BaseLogAppHeader/BaseLogAppHeader'
+import BaseLogAppBody from './BaseLogAppBody/BaseLogAppBody';
 
 function App() {
   return (
     <div>
-      <BTAppHeader></BTAppHeader>
+      <BaseLogAppHeader></BaseLogAppHeader>
+      <BaseLogAppBody />
     </div>
   );
 }

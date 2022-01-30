@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export default function BTAppCard(props) {
+export default function BaseLogAppCard(props) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia

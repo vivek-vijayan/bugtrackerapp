@@ -2,14 +2,10 @@ import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
-import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
@@ -25,7 +21,7 @@ import FlagIcon from '@mui/icons-material/Flag';
 import ExtensionIcon from '@mui/icons-material/Extension';
 import GradeIcon from '@mui/icons-material/Grade';
 
-import BTAppCard from './BTAppCard/BTAppCard'
+import BaseLogAppCard from './BaseLogAppCard/BaseLogAppCard'
 
 const drawerWidth = 240;
 
@@ -61,24 +57,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     ...theme.mixins.toolbar,
 }));
 
-const AppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-    }),
-    ...(open && {
-        marginLeft: drawerWidth,
-
-        width: `calc(100% - ${drawerWidth}px)`,
-        transition: theme.transitions.create(['width', 'margin'], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-    }),
-}));
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
@@ -97,7 +75,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
-export default function BTAppBody() {
+export default function BaseLogAppBody() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(true);
 
@@ -111,7 +89,7 @@ export default function BTAppBody() {
     };
 
     var ErrorStack = (props) => {
-        if (props.state == "true") {
+        if (props.state === "true") {
             return (
                 <Grid container spacing={1}>
                     <Grid item xs={12} style={{ margin: 10 }}>
@@ -191,19 +169,19 @@ export default function BTAppBody() {
                 <ErrorStack state="false" critical="error" message="Error working.." />
                 <Grid container spacing={2}>
                     <Grid item xs={3} >
-                        <BTAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
+                        <BaseLogAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
                     </Grid>
                     <Grid item xs={3} >
-                        <BTAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
+                        <BaseLogAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
                     </Grid>
                     <Grid item xs={3} >
-                        <BTAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
+                        <BaseLogAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
                     </Grid>
                     <Grid item xs={3} >
-                        <BTAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
+                        <BaseLogAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
                     </Grid>
                     <Grid item xs={3} >
-                        <BTAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
+                        <BaseLogAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
                     </Grid>
                 </Grid>
             </Box>

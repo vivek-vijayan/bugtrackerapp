@@ -11,9 +11,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import BTAppBody from '../BTAppBody/BTAppBody';
 import Logo from './Icon.png';
-import './BTAppHeader.css'
+import './BaseLogAppHeader.css'
 
 const pages = ['Issues', 'Groups', 'Report'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -38,7 +37,6 @@ const ResponsiveAppBar = () => {
     };
 
     return (
-        <div>
             <AppBar position="static" className='bt-title' style={{position:'fixed', zIndex:5, backgroundColor: '#003B72'}}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
@@ -48,7 +46,7 @@ const ResponsiveAppBar = () => {
                             component="div"
                             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
                         >
-                            <img src={Logo} className='bt-logo'/>
+                            <img src={Logo} alt='Logo' className='bt-logo'/>
                         </Typography>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -93,7 +91,7 @@ const ResponsiveAppBar = () => {
                             component="div"
                             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                         >
-                            <img src={Logo} className='bt-logo'/>
+                            <img src={Logo} alt='Logo' className='bt-logo'/>
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             {pages.map((page) => (
@@ -139,8 +137,6 @@ const ResponsiveAppBar = () => {
                     </Toolbar>
                 </Container>
             </AppBar>
-            <BTAppBody />
-        </div>
     );
 };
 export default ResponsiveAppBar;
