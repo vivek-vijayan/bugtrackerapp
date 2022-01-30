@@ -25,6 +25,8 @@ import FlagIcon from '@mui/icons-material/Flag';
 import ExtensionIcon from '@mui/icons-material/Extension';
 import GradeIcon from '@mui/icons-material/Grade';
 
+import BTAppCard from './BTAppCard/BTAppCard'
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -44,9 +46,9 @@ const closedMixin = (theme) => ({
     }),
     overflowX: 'hidden',
     marginTop: 70,
-    width: `calc(${theme.spacing(7)} + 1px)`,
+    width: `calc(${theme.spacing(6)} + 1px)`,
     [theme.breakpoints.up('sm')]: {
-        width: `calc(${theme.spacing(9)} + 1px)`,
+        width: `calc(${theme.spacing(7)} + 1px)`,
     },
 });
 
@@ -100,6 +102,9 @@ export default function BTAppBody() {
     const [open, setOpen] = React.useState(true);
 
     const handleDrawer = () => {
+        open ? 
+            theme.direction = 'rtl' : 
+            theme.direction = 'ltr';
         open ?
             setOpen(false) :
             setOpen(true);
@@ -114,6 +119,9 @@ export default function BTAppBody() {
                     </Grid>
                 </Grid>
             )
+        }
+        else{
+            return (<div></div>)
         }
     }
 
@@ -178,21 +186,26 @@ export default function BTAppBody() {
                     ))}
                 </List>
             </Drawer>
-            <Box component="main" sx={{ flexGrow: 2, p: 3 }} style={{ marginTop: 80 }}>
-                <ErrorStack state="true" critical="error" message="Error working.." />
-                <Typography paragraph style={{ marginTop: 0 }}>
-                    Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-                    eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-                    neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-                    tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-                    sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-                    tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-                    gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-                    et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-                    tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-                    eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-                    posuere sollicitudin aliquam ultrices sagittis orci a.
-                </Typography>
+            <Box component="main" sx={{ flexGrow: 1, p: 3 }} style={{ marginTop: 80 }}>
+                <Typography variant='subtitle1'> Quick Links </Typography>
+                <ErrorStack state="false" critical="error" message="Error working.." />
+                <Grid container spacing={2}>
+                    <Grid item xs={3} >
+                        <BTAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
+                    </Grid>
+                    <Grid item xs={3} >
+                        <BTAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
+                    </Grid>
+                    <Grid item xs={3} >
+                        <BTAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
+                    </Grid>
+                    <Grid item xs={3} >
+                        <BTAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
+                    </Grid>
+                    <Grid item xs={3} >
+                        <BTAppCard title="What's New" image="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png"/>
+                    </Grid>
+                </Grid>
             </Box>
         </Box>
     );

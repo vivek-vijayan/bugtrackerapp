@@ -39,7 +39,7 @@ const ResponsiveAppBar = () => {
 
     return (
         <div>
-            <AppBar position="static" className='bt-title' style={{position:'fixed', zIndex:5}}>
+            <AppBar position="static" className='bt-title' style={{position:'fixed', zIndex:5, backgroundColor: '#003B72'}}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
                         <Typography
