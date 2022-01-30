@@ -1,19 +1,10 @@
 
 .bt-title{
     background-color: #003B72;
-    text-align: center;
-    padding: 20px;
-    color: white;
-    position: static;
-}
-
-.bt-notice{
-    background-color: #001325;
     text-align: left;
     padding: 0px;
-    color: rgb(252, 4, 4);
+    color: white;
     position: static;
-    vertical-align: super;
 }
 
 .bt-logo {
